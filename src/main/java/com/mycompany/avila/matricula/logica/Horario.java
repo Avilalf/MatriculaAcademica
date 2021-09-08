@@ -2,9 +2,9 @@
  * — Autor: Cristian David Avila Narvaez
  * — Código de estudiante: 1957500-2711
  * — Programación Interactiva.
- * — Grupo: F.
+ * — Grupo: D.
  */
-package com.mycompany.avila_sesion05.imp.relacion.matricula.logica;
+package com.mycompany.avila.matricula.logica;
 
 import java.util.Date;
 
