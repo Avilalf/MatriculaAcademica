@@ -14,26 +14,14 @@ import java.util.Date;
  */
 public class Horario {
 
-    private String dia;
+    private Dia dia;
     private Date horaInicio;
     private Date horafin;
 
-    public Horario(String dia, Date horaInicio, Date horafin) {
+    public Horario(Dia dia, Date horaInicio, Date horafin) {
         this.dia = dia;
         this.horaInicio = horaInicio;
         this.horafin = horafin;
-    }
-
-    public String getDia() {
-        return dia;
-    }
-
-    public Date getHoraInicio() {
-        return horaInicio;
-    }
-
-    public Date getHorafin() {
-        return horafin;
     }
 
 }
