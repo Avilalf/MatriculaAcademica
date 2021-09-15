@@ -52,4 +52,17 @@ public class Curso {
     public void remove(Horario horario) {
         this.horarios.remove(horario);
     }
+
+    //Método que permite agregar estudiantes al curso, con el factor de que los cupos del curso se reducen en 1 por cada estudiante
+    public void registrarEstudiante(Estudiante estudiante, Cupo cupo) {
+
+        this.estudiantes.add(estudiante);
+
+        for (int i = 0; i < this.cupos.size(); i++) {
+
+            this.cupos.get(i).removeCupo();
+
+        }
+
+    }
 }
