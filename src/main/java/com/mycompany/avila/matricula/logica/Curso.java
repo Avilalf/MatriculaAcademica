@@ -21,14 +21,16 @@ public class Curso {
     private Docente docente;
     private List<Cupo> cupos;
     private List<Horario> horarios;
+    private List<Estudiante> estudiantes;
 
-    public Curso(int grupo, int totalCupos, Asignatura asignatura, Docente docente, List<Cupo> cupos, List<Horario> horarios) {
+    public Curso(int grupo, int totalCupos, Asignatura asignatura, Docente docente, List<Cupo> cupos, List<Horario> horarios, List<Estudiante> estudiantes) {
         this.grupo = grupo;
         this.totalCupos = totalCupos;
         this.asignatura = asignatura;
         this.docente = docente;
         this.cupos = new LinkedList<>();
         this.horarios = new LinkedList<>();
+        this.estudiantes = new LinkedList<>();
     }
 
     // Método que permite agregar cupos al curso.
