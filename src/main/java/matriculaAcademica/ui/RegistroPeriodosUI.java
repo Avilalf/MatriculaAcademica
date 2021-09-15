@@ -29,7 +29,6 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
         this.universidad = new Universidad(1957500, "Universidad del Valle", "Zamorano", null);
         jButtonCancelar.addActionListener(new CancelListener());
         jButtonGuardar.addActionListener(new SaveListener());
-        txfInicioAño.addKeyListener(new AñoKeyPressed());
 
     }
 
@@ -198,22 +197,4 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
 
     }
 
-    // Método que permite transcribir lo que se encuentra digitando en vivo en la celda de InicioAñoPeriodo, a la celda del FinAñoPeriodo.
-    public class AñoKeyPressed implements KeyListener {
-
-        @Override
-        public void keyReleased(KeyEvent ke) {
-            String InicioAño = txfInicioAño.getText();
-            txfFinAño.setText(InicioAño);
-        }
-
-        @Override
-        public void keyTyped(KeyEvent ke) {
-        }
-
-        @Override
-        public void keyPressed(KeyEvent ke) {
-        }
-
-    }
 }
