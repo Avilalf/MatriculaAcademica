@@ -5,21 +5,31 @@
  */
 package matriculaAcademica.ui;
 
+import com.mycompany.avila.matricula.logica.Periodo;
+import com.mycompany.avila.matricula.logica.Universidad;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author 57312
+ * @author Cristian D. Avila N.
  */
 public class RegistroPeriodosUI extends javax.swing.JFrame {
 
+//    private Universidad universidad;
     /**
      * Creates new form RegistroPeriodosUI
      */
     public RegistroPeriodosUI() {
         initComponents();
+//        this.universidad = universidad;
         jButtonCancelar.addActionListener(new CancelListener());
+        jButtonGuardar.addActionListener(new SaveListener());
+        txfInicioAño.addKeyListener(new AñoKeyPressed());
+
     }
 
     /**
@@ -52,6 +62,7 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
 
         jLabel3.setText("Finaliza :");
 
+        txfFinAño.setEditable(false);
         txfFinAño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txfFinAñoActionPerformed(evt);
@@ -160,4 +171,50 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
 
     }
 
+    public class SaveListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+
+            // 1. Obtener la información de los componentes gráficos
+            //String txt = txfInitMonth.getText();
+            String InicioMesPeriodo = txfInicioMesPeriodo.getText();
+            short InicioAño = Short.parseShort(txfInicioAño.getText());
+            String FinMesPeriodo = txfFinMesPeriodo.getText();
+            String FinAño = txfFinAño.getText();
+
+            // 2. Crear el objeto (con la información)
+            //Periodo periodo = new Periodo(....);
+            Periodo periodo = new Periodo(InicioMesPeriodo, FinMesPeriodo, (short) InicioAño);
+
+            // 3. Agregar el objeto a la universidad
+            Universidad universidad = new Universidad(1957500, "Universidad del Valle", "Zamorano", periodo);
+
+            //or
+            universidad.add(periodo);
+            // 4. Mostrar un mensaje que indique que el periodo fue creado
+            //    y agregado a la Universidad
+            JOptionPane.showMessageDialog(RegistroPeriodosUI.this, "Información almacenada satisfactoriamente, PERIODO agregado.");
+        }
+
+    }
+
+    // Método que permite transcribir lo que se encuentra digitando en vivo en la celda de InicioAñoPeriodo, a la celda del FinAñoPeriodo.
+    public class AñoKeyPressed implements KeyListener {
+
+        @Override
+        public void keyReleased(KeyEvent ke) {
+            String InicioAño = txfInicioAño.getText();
+            txfFinAño.setText(InicioAño);
+        }
+
+        @Override
+        public void keyTyped(KeyEvent ke) {
+        }
+
+        @Override
+        public void keyPressed(KeyEvent ke) {
+        }
+
+    }
 }
