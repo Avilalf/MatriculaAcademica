@@ -22,6 +22,7 @@ public class Cupo {
         this.programa = programa;
     }
 
+    // Método que reduce la cantidad disponible de los cupos, en -1. Funcionalidad: ser usada al agregar un estudiante
     public void removeCupo() {
         this.disponibles -= 1;
     }
