@@ -22,4 +22,8 @@ public class Cupo {
         this.programa = programa;
     }
 
+    public void removeCupo() {
+        this.disponibles -= 1;
+    }
+
 }
