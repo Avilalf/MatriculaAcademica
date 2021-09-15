@@ -179,14 +179,14 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
 
             // 1. Obtener la información de los componentes gráficos
             //String txt = txfInitMonth.getText();
-            String InicioMesPeriodo = txfInicioMesPeriodo.getText();
-            short InicioAño = Short.parseShort(txfInicioAño.getText());
-            String FinMesPeriodo = txfFinMesPeriodo.getText();
-            String FinAño = txfFinAño.getText();
+            String inicioMesPeriodo = txfInicioMesPeriodo.getText();
+            short inicioAño = Short.parseShort(txfInicioAño.getText());
+            String finMesPeriodo = txfFinMesPeriodo.getText();
+            short finAño = Short.parseShort(txfFinAño.getText());
 
             // 2. Crear el objeto (con la información)
             //Periodo periodo = new Periodo(....);
-            Periodo periodo = new Periodo(InicioMesPeriodo, FinMesPeriodo, (short) InicioAño);
+            Periodo periodo = new Periodo(inicioMesPeriodo, finMesPeriodo, inicioAño, finAño);
 
             // 3. Agregar el objeto a la universidad
             //or 
