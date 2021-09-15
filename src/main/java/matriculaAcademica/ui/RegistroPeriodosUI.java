@@ -19,13 +19,14 @@ import javax.swing.JOptionPane;
  */
 public class RegistroPeriodosUI extends javax.swing.JFrame {
 
-//    private Universidad universidad;
+    private Universidad universidad;
+
     /**
      * Creates new form RegistroPeriodosUI
      */
     public RegistroPeriodosUI() {
         initComponents();
-//        this.universidad = universidad;
+        this.universidad = new Universidad(1957500, "Universidad del Valle", "Zamorano", null);
         jButtonCancelar.addActionListener(new CancelListener());
         jButtonGuardar.addActionListener(new SaveListener());
         txfInicioAño.addKeyListener(new AñoKeyPressed());
@@ -188,9 +189,7 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
             Periodo periodo = new Periodo(InicioMesPeriodo, FinMesPeriodo, (short) InicioAño);
 
             // 3. Agregar el objeto a la universidad
-            Universidad universidad = new Universidad(1957500, "Universidad del Valle", "Zamorano", periodo);
-
-            //or
+            //or 
             universidad.add(periodo);
             // 4. Mostrar un mensaje que indique que el periodo fue creado
             //    y agregado a la Universidad
