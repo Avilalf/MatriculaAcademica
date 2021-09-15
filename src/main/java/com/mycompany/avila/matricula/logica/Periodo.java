@@ -17,13 +17,15 @@ public class Periodo {
 
     private String inicia;
     private String finaliza;
-    private short año;
+    private short añoInicia;
+    private short añoFinaliza;
     private List<Curso> cursos;
 
-    public Periodo(String inicia, String finaliza, short año) {
+    public Periodo(String inicia, String finaliza, short añoInicia, short añoFinaliza) {
         this.inicia = inicia;
         this.finaliza = finaliza;
-        this.año = año;
+        this.añoInicia = añoInicia;
+        this.añoFinaliza = añoFinaliza;
         this.cursos = new LinkedList<>();
     }
 
