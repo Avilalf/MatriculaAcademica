@@ -5,6 +5,9 @@
  */
 package matriculaAcademica.ui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author 57312
@@ -16,6 +19,7 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
      */
     public RegistroPeriodosUI() {
         initComponents();
+        jButtonCancelar.addActionListener(new CancelListener());
     }
 
     /**
@@ -29,11 +33,11 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jtxInicioPeriodo = new javax.swing.JTextField();
-        jtxInicioAño = new javax.swing.JTextField();
+        txfInicioMesPeriodo = new javax.swing.JTextField();
+        txfInicioAño = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jtxFinPeriodo = new javax.swing.JTextField();
-        jtxFinAño = new javax.swing.JTextField();
+        txfFinMesPeriodo = new javax.swing.JTextField();
+        txfFinAño = new javax.swing.JTextField();
         jButtonGuardar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
 
@@ -48,9 +52,9 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
 
         jLabel3.setText("Finaliza :");
 
-        jtxFinAño.addActionListener(new java.awt.event.ActionListener() {
+        txfFinAño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxFinAñoActionPerformed(evt);
+                txfFinAñoActionPerformed(evt);
             }
         });
 
@@ -81,12 +85,12 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
                                     .addComponent(jLabel1))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jtxInicioPeriodo)
-                                    .addComponent(jtxFinPeriodo, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                                    .addComponent(txfInicioMesPeriodo)
+                                    .addComponent(txfFinMesPeriodo, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jtxFinAño, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
-                                    .addComponent(jtxInicioAño)))
+                                    .addComponent(txfFinAño, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                                    .addComponent(txfInicioAño)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
                                 .addComponent(jButtonGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -103,13 +107,13 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jtxInicioPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxInicioAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txfInicioMesPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfInicioAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jtxFinPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxFinAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txfFinMesPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfFinAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonGuardar)
@@ -124,44 +128,10 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
-    private void jtxFinAñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxFinAñoActionPerformed
+    private void txfFinAñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfFinAñoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtxFinAñoActionPerformed
+    }//GEN-LAST:event_txfFinAñoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistroPeriodosUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistroPeriodosUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistroPeriodosUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistroPeriodosUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RegistroPeriodosUI().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancelar;
@@ -169,9 +139,25 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jtxFinAño;
-    private javax.swing.JTextField jtxFinPeriodo;
-    private javax.swing.JTextField jtxInicioAño;
-    private javax.swing.JTextField jtxInicioPeriodo;
+    private javax.swing.JTextField txfFinAño;
+    private javax.swing.JTextField txfFinMesPeriodo;
+    private javax.swing.JTextField txfInicioAño;
+    private javax.swing.JTextField txfInicioMesPeriodo;
     // End of variables declaration//GEN-END:variables
+
+    //Permite borrar toda la información ingresada en los campos de texto solicitados
+    public class CancelListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+
+            txfInicioMesPeriodo.setText("");
+            txfInicioAño.setText("");
+            txfFinMesPeriodo.setText("");
+            txfFinAño.setText("");
+
+        }
+
+    }
+
 }

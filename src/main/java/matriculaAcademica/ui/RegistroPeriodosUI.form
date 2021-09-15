@@ -40,13 +40,13 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jtxInicioPeriodo" max="32767" attributes="0"/>
-                                  <Component id="jtxFinPeriodo" pref="144" max="32767" attributes="0"/>
+                                  <Component id="txfInicioMesPeriodo" max="32767" attributes="0"/>
+                                  <Component id="txfFinMesPeriodo" pref="144" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jtxFinAño" pref="76" max="32767" attributes="0"/>
-                                  <Component id="jtxInicioAño" max="32767" attributes="0"/>
+                                  <Component id="txfFinAño" pref="76" max="32767" attributes="0"/>
+                                  <Component id="txfInicioAño" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -71,14 +71,14 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtxInicioPeriodo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtxInicioAño" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txfInicioMesPeriodo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txfInicioAño" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtxFinPeriodo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtxFinAño" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txfFinMesPeriodo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txfFinAño" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -105,20 +105,20 @@
         <Property name="text" type="java.lang.String" value="Inicia :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtxInicioPeriodo">
+    <Component class="javax.swing.JTextField" name="txfInicioMesPeriodo">
     </Component>
-    <Component class="javax.swing.JTextField" name="jtxInicioA&#xf1;o">
+    <Component class="javax.swing.JTextField" name="txfInicioA&#xf1;o">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Finaliza :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtxFinPeriodo">
+    <Component class="javax.swing.JTextField" name="txfFinMesPeriodo">
     </Component>
-    <Component class="javax.swing.JTextField" name="jtxFinA&#xf1;o">
+    <Component class="javax.swing.JTextField" name="txfFinA&#xf1;o">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtxFinA&#xf1;oActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfFinA&#xf1;oActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonGuardar">
