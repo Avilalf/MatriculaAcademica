@@ -9,8 +9,6 @@ import com.mycompany.avila.matricula.logica.Periodo;
 import com.mycompany.avila.matricula.logica.Universidad;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -62,7 +60,6 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
 
         jLabel3.setText("Finaliza :");
 
-        txfFinAño.setEditable(false);
         txfFinAño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txfFinAñoActionPerformed(evt);
