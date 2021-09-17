@@ -12,9 +12,11 @@ package com.mycompany.avila.matricula.logica;
 public class Deuda {
 
     private Periodo periodo;
+    private String descripcion;
 
-    public Deuda(Periodo periodo) {
+    public Deuda(Periodo periodo, String descripcion) {
         this.periodo = periodo;
+        this.descripcion = descripcion;
     }
 
 }
