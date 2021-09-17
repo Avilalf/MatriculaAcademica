@@ -19,7 +19,7 @@ public class Main {
 
     public static void main(String args[]) {
 
-        Universidad univalle = new Universidad(0123456, "Universidad del Valle", "La Carbonera, Zamorano", null);
+        Universidad univalle = new Universidad(1411L, "Universidad del Valle", "La Carbonera, Zamorano", null);
 
         Programa tecSistemas = new Programa((short) 2711, "Tecnología en Sistemas", "DIU");
         Programa ingIndustrial = new Programa((short) 2322, "Ingeniería Industrial", "NOC");
@@ -30,8 +30,9 @@ public class Main {
         Estudiante est04 = new Estudiante(201723456, ingIndustrial, 1113265823, "Nicolás", "Salas");
         Estudiante est05 = new Estudiante(201823415, ingIndustrial, 1113547152, "Santiago", "Quintero");
 
-        new RegistroPeriodosUI().setVisible(true);
+        new RegistroPeriodosUI(univalle).setVisible(true);
         new RegistroDeudas().setVisible(true);
+
     }
 
 }
