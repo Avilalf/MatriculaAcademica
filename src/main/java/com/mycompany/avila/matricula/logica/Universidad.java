@@ -17,18 +17,18 @@ public class Universidad {
     private long nit;
     private String nombre;
     private String direccion;
-    private Periodo periodo;
+    private Periodo periodoActual;
     private List<Periodo> periodos;
     private List<Programa> programas;
     private List<Asignatura> asignaturas;
     private List<Docente> docentes;
     private List<Estudiante> estudiantes;
 
-    public Universidad(long nit, String nombre, String direccion, Periodo periodo) {
+    public Universidad(long nit, String nombre, String direccion) {
         this.nit = nit;
         this.nombre = nombre;
         this.direccion = direccion;
-        this.periodo = periodo;
+        this.periodoActual = null;
         this.periodos = new LinkedList<>();
         this.programas = new LinkedList<>();
         this.asignaturas = new LinkedList<>();
@@ -39,6 +39,7 @@ public class Universidad {
     // Métodos que permiten agregar y remover datos a las listas.
     public void add(Periodo periodo) {
         this.periodos.add(periodo);
+        this.periodoActual = periodo;
     }
 
     public void remove(Periodo periodo) {
