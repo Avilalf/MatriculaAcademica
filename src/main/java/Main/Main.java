@@ -19,7 +19,7 @@ public class Main {
 
     public static void main(String args[]) {
 
-        Universidad univalle = new Universidad(1411L, "Universidad del Valle", "La Carbonera, Zamorano", null);
+        Universidad univalle = new Universidad(1411L, "Universidad del Valle", "La Carbonera, Zamorano");
 
         Programa tecSistemas = new Programa((short) 2711, "Tecnología en Sistemas", "DIU");
         Programa ingIndustrial = new Programa((short) 2322, "Ingeniería Industrial", "NOC");
