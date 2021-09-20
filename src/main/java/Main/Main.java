@@ -8,7 +8,7 @@ package Main;
 import com.mycompany.avila.matricula.logica.Estudiante;
 import com.mycompany.avila.matricula.logica.Programa;
 import com.mycompany.avila.matricula.logica.Universidad;
-import matriculaAcademica.ui.RegistroDeudas;
+import matriculaAcademica.ui.RegistroDeudasUI;
 import matriculaAcademica.ui.RegistroPeriodosUI;
 
 /**
@@ -31,7 +31,7 @@ public class Main {
         Estudiante est05 = new Estudiante(201823415, ingIndustrial, 1113547152, "Santiago", "Quintero");
 
         new RegistroPeriodosUI(univalle).setVisible(true);
-        new RegistroDeudas().setVisible(true);
+        new RegistroDeudasUI(univalle).setVisible(true);
 
     }
 

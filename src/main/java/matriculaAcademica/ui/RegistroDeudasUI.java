@@ -5,17 +5,23 @@
  */
 package matriculaAcademica.ui;
 
+import com.mycompany.avila.matricula.logica.Universidad;
+
 /**
  *
  * @author avila
  */
-public class RegistroDeudas extends javax.swing.JFrame {
+public class RegistroDeudasUI extends javax.swing.JFrame {
+
+    private Universidad universidad;
 
     /**
      * Creates new form RegistroDeudas
      */
-    public RegistroDeudas() {
+    public RegistroDeudasUI(Universidad universidad) {
+        this.universidad = universidad;
         initComponents();
+
     }
 
     /**

@@ -23,8 +23,8 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
      * Creates new form RegistroPeriodosUI
      */
     public RegistroPeriodosUI(Universidad universidad) {
-        initComponents();
         this.universidad = universidad;
+        initComponents();
         jButtonCancelar.addActionListener(new CancelListener());
         jButtonGuardar.addActionListener(new SaveListener());
 
