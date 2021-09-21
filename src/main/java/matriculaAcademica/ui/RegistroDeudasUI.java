@@ -21,7 +21,7 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
     public RegistroDeudasUI(Universidad universidad) {
         this.universidad = universidad;
         initComponents();
-
+        txfPeriodo.setText(universidad.getPeriodoActual().toString());
     }
 
     /**
@@ -146,4 +146,22 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
     private javax.swing.JTextField txfNombreEstudiante;
     private javax.swing.JTextField txfPeriodo;
     // End of variables declaration//GEN-END:variables
+
+//    public class ActualizarPeriodoInfo implements ActionListener {
+//
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+////            txfPeriodo.setText(universidad.getPeriodoActual());
+//            txfPeriodo.setText("");
+//            String periodoActualInfo = universidad.getPeriodoActual().toString();
+//            txfPeriodo.setText(periodoActualInfo);
+//
+//        }
+//
+//    }
+//    public void ActualizarPeriodoInfo() {
+//        txfPeriodo.setText("");
+//        String periodoActualInfo = universidad.getPeriodoActual().toString();
+//        txfPeriodo.setText(periodoActualInfo);
+//    }
 }

@@ -28,7 +28,7 @@ public class Universidad {
         this.nit = nit;
         this.nombre = nombre;
         this.direccion = direccion;
-        this.periodoActual = null;
+        this.periodoActual = periodoActual;
         this.periodos = new LinkedList<>();
         this.programas = new LinkedList<>();
         this.asignaturas = new LinkedList<>();
@@ -78,4 +78,14 @@ public class Universidad {
         this.estudiantes.remove(estudiante);
     }
 
+    public Periodo getPeriodoActual() {
+        return periodoActual;
+    }
+
+    @Override
+    public String toString() {
+        return "Universidad{" + "nit=" + nit + ", nombre=" + nombre + ", direccion=" + direccion + ", periodoActual=" + periodoActual + ", periodos=" + periodos + ", programas=" + programas + ", asignaturas=" + asignaturas + ", docentes=" + docentes + ", estudiantes=" + estudiantes + '}';
+    }
+    
+    
 }

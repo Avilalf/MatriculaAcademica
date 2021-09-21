@@ -6,6 +6,7 @@
 package Main;
 
 import com.mycompany.avila.matricula.logica.Estudiante;
+import com.mycompany.avila.matricula.logica.Periodo;
 import com.mycompany.avila.matricula.logica.Programa;
 import com.mycompany.avila.matricula.logica.Universidad;
 import matriculaAcademica.ui.RegistroDeudasUI;
@@ -20,7 +21,9 @@ public class Main {
     public static void main(String args[]) {
 
         Universidad univalle = new Universidad(1411L, "Universidad del Valle", "La Carbonera, Zamorano");
-
+        
+        Periodo periodoActual = new Periodo("Agosto", "Diciembre", (short) 2021, (short) 2022);
+        
         Programa tecSistemas = new Programa((short) 2711, "Tecnología en Sistemas", "DIU");
         Programa ingIndustrial = new Programa((short) 2322, "Ingeniería Industrial", "NOC");
 

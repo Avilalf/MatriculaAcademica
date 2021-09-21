@@ -39,4 +39,9 @@ public class Periodo {
         this.cursos.remove(curso);
     }
 
+    @Override
+    public String toString() {
+        return "Periodo actual:" + inicia + finaliza + añoInicia + añoFinaliza;
+    }
+
 }
