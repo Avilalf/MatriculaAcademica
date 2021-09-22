@@ -78,6 +78,16 @@ public class Universidad {
         this.estudiantes.remove(estudiante);
     }
 
+    // Buscar - Un método que permite buscar un estudiante de la universidad a partir de un criterio.
+    public Estudiante BuscarEstudiante(int codigo) throws Exception {
+        for (Estudiante estudiante : estudiantes) { // Para cada uno de los elementos | For Each
+            if (estudiante.getCodigo() == codigo) {
+                return estudiante;
+            }
+        }
+        throw new Exception("No se encontró el estudiante de codigo: " + codigo);
+    }
+
     public Periodo getPeriodoActual() {
         return periodoActual;
     }
@@ -86,6 +96,5 @@ public class Universidad {
     public String toString() {
         return "Universidad{" + "nit=" + nit + ", nombre=" + nombre + ", direccion=" + direccion + ", periodoActual=" + periodoActual + ", periodos=" + periodos + ", programas=" + programas + ", asignaturas=" + asignaturas + ", docentes=" + docentes + ", estudiantes=" + estudiantes + '}';
     }
-    
-    
+
 }

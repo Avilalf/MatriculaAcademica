@@ -5,7 +5,12 @@
  */
 package matriculaAcademica.ui;
 
+import com.mycompany.avila.matricula.logica.Deuda;
+import com.mycompany.avila.matricula.logica.Estudiante;
 import com.mycompany.avila.matricula.logica.Universidad;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,6 +19,7 @@ import com.mycompany.avila.matricula.logica.Universidad;
 public class RegistroDeudasUI extends javax.swing.JFrame {
 
     private Universidad universidad;
+    private Estudiante estudianteEncontrado;
 
     /**
      * Creates new form RegistroDeudas
@@ -22,6 +28,10 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
         this.universidad = universidad;
         initComponents();
         txfPeriodo.setText(universidad.getPeriodoActual().toString());
+        btnSearch.addActionListener(new SearchStudent());
+        btnCancelar.addActionListener(new Cancel());
+        cbDeuda.setSelectedItem(null);
+        btnRegistrarDeuda.addActionListener(new RegistrarDeuda());
     }
 
     /**
@@ -147,21 +157,56 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
     private javax.swing.JTextField txfPeriodo;
     // End of variables declaration//GEN-END:variables
 
-//    public class ActualizarPeriodoInfo implements ActionListener {
-//
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-////            txfPeriodo.setText(universidad.getPeriodoActual());
-//            txfPeriodo.setText("");
-//            String periodoActualInfo = universidad.getPeriodoActual().toString();
-//            txfPeriodo.setText(periodoActualInfo);
-//
-//        }
-//
-//    }
-//    public void ActualizarPeriodoInfo() {
-//        txfPeriodo.setText("");
-//        String periodoActualInfo = universidad.getPeriodoActual().toString();
-//        txfPeriodo.setText(periodoActualInfo);
-//    }
+    public class SearchStudent implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            try {
+                int codigoEstudiante = Integer.parseInt(txfCodigoEstudiante.getText());
+                universidad.BuscarEstudiante(codigoEstudiante);
+                estudianteEncontrado = universidad.BuscarEstudiante(codigoEstudiante);
+                txfNombreEstudiante.setText(estudianteEncontrado.getNombre() + " " + estudianteEncontrado.getApellido() + " (" + estudianteEncontrado.getPrograma() + ")");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(RegistroDeudasUI.this, "El código digitado no es un valor correcto.");
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(RegistroDeudasUI.this, "No se encontró el estudiante con dicho código " + "(" + txfCodigoEstudiante.getText() + ").");
+
+            }
+        }
+    }
+
+    public class RegistrarDeuda implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            try {
+                String descripcion = cbDeuda.getSelectedItem().toString();
+                Deuda deudaRegistrada = new Deuda(universidad.getPeriodoActual(), descripcion);
+                estudianteEncontrado.add(deudaRegistrada);
+                JOptionPane.showMessageDialog(RegistroDeudasUI.this, "Deuda registrada satisfactoriamente al estudiante (" + estudianteEncontrado.getCodigo() + ")");
+
+            } catch (Exception exc) {
+
+                JOptionPane.showMessageDialog(RegistroDeudasUI.this, "Deuda registrada satisfactoriamente al estudiante (" + estudianteEncontrado.getCodigo() + ")");
+            }
+        }
+
+    }
+
+    public class Cancel implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            txfNombreEstudiante.setText("N/A");
+            txfCodigoEstudiante.setText("");
+            estudianteEncontrado = null;
+            cbDeuda.setSelectedItem(null);
+            cbDeuda.updateUI();
+
+        }
+
+    }
+
 }

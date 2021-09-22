@@ -43,4 +43,12 @@ public class Estudiante extends Persona {
         this.deudas.remove(deuda);
     }
 
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public Programa getPrograma() {
+        return programa;
+    }
+
 }

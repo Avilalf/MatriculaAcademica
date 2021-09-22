@@ -37,4 +37,9 @@ public class Programa {
         this.semestres.remove(semestre);
     }
 
+    @Override
+    public String toString() {
+        return nombre + " - " + jornada;
+    }
+
 }
