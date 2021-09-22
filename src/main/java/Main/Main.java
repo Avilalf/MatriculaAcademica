@@ -21,9 +21,8 @@ public class Main {
     public static void main(String args[]) {
 
         Universidad univalle = new Universidad(1411L, "Universidad del Valle", "La Carbonera, Zamorano");
-        
+
         Periodo periodoActual = new Periodo("Agosto", "Diciembre", (short) 2021, (short) 2022);
-        
         Programa tecSistemas = new Programa((short) 2711, "Tecnología en Sistemas", "DIU");
         Programa ingIndustrial = new Programa((short) 2322, "Ingeniería Industrial", "NOC");
 
@@ -32,6 +31,15 @@ public class Main {
         Estudiante est03 = new Estudiante(201957900, tecSistemas, 1010586977, "Junior", "Ortiz");
         Estudiante est04 = new Estudiante(201723456, ingIndustrial, 1113265823, "Nicolás", "Salas");
         Estudiante est05 = new Estudiante(201823415, ingIndustrial, 1113547152, "Santiago", "Quintero");
+
+        univalle.add(periodoActual);
+        univalle.add(tecSistemas);
+        univalle.add(ingIndustrial);
+        univalle.add(est01);
+        univalle.add(est02);
+        univalle.add(est03);
+        univalle.add(est04);
+        univalle.add(est05);
 
         new RegistroPeriodosUI(univalle).setVisible(true);
         new RegistroDeudasUI(univalle).setVisible(true);

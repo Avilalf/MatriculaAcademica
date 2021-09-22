@@ -41,7 +41,7 @@ public class Periodo {
 
     @Override
     public String toString() {
-        return "Periodo actual:" + inicia + finaliza + añoInicia + añoFinaliza;
+        return "Actual: " + inicia + " - " + finaliza + " (" + añoInicia + " - " + añoFinaliza + ")";
     }
 
 }
