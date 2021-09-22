@@ -28,7 +28,7 @@ public class Universidad {
         this.nit = nit;
         this.nombre = nombre;
         this.direccion = direccion;
-        this.periodoActual = periodoActual;
+        this.periodoActual = null;
         this.periodos = new LinkedList<>();
         this.programas = new LinkedList<>();
         this.asignaturas = new LinkedList<>();
