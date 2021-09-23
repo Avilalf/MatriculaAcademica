@@ -168,13 +168,14 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
                 universidad.BuscarEstudiante(codigoEstudiante);
                 estudianteEncontrado = universidad.BuscarEstudiante(codigoEstudiante);
                 txfNombreEstudiante.setText(estudianteEncontrado.getNombre() + " " + estudianteEncontrado.getApellido() + " (" + estudianteEncontrado.getPrograma() + ")");
+                btnRegistrarDeuda.setEnabled(true);
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(RegistroDeudasUI.this, "El código digitado no es un valor correcto.");
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(RegistroDeudasUI.this, "No se encontró el estudiante con dicho código " + "(" + txfCodigoEstudiante.getText() + ").");
 
             }
-            btnRegistrarDeuda.setEnabled(true);
+
         }
     }
 
