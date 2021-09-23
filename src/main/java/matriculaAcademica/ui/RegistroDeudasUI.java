@@ -31,6 +31,7 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
         btnSearch.addActionListener(new SearchStudent());
         btnCancelar.addActionListener(new Cancel());
         cbDeuda.setSelectedItem(null);
+        btnRegistrarDeuda.setEnabled(false);
         btnRegistrarDeuda.addActionListener(new RegistrarDeuda());
     }
 
@@ -173,6 +174,7 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(RegistroDeudasUI.this, "No se encontró el estudiante con dicho código " + "(" + txfCodigoEstudiante.getText() + ").");
 
             }
+            btnRegistrarDeuda.setEnabled(true);
         }
     }
 
@@ -203,6 +205,7 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
             txfCodigoEstudiante.setText("");
             estudianteEncontrado = null;
             cbDeuda.setSelectedItem(null);
+            btnRegistrarDeuda.setEnabled(false);
             cbDeuda.updateUI();
 
         }
