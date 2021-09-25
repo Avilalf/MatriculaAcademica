@@ -26,6 +26,7 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
      */
     public RegistroDeudasUI(Universidad universidad) {
         this.universidad = universidad;
+        this.estudianteEncontrado = estudianteEncontrado;
         initComponents();
         txfPeriodo.setText(universidad.getPeriodoActual().toString());
         btnSearch.addActionListener(new SearchStudent());
@@ -184,18 +185,23 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            try {
-                String descripcion = cbDeuda.getSelectedItem().toString();
-                Deuda deudaRegistrada = new Deuda(universidad.getPeriodoActual(), descripcion);
-                estudianteEncontrado.add(deudaRegistrada);
-                JOptionPane.showMessageDialog(RegistroDeudasUI.this, "Deuda registrada satisfactoriamente al estudiante (" + estudianteEncontrado.getCodigo() + ")");
+            if (cbDeuda.getSelectedItem() == null) {
+                JOptionPane.showMessageDialog(RegistroDeudasUI.this, "No es posible registrar la deuda, seleccione el tipo de Deuda.");
+            } else {
 
-            } catch (Exception exc) {
+                try {
+                    String descripcion = cbDeuda.getSelectedItem().toString();
+                    Deuda deudaRegistrada = new Deuda(universidad.getPeriodoActual(), descripcion);
+                    estudianteEncontrado.add(deudaRegistrada);
+                    JOptionPane.showMessageDialog(RegistroDeudasUI.this, "Deuda registrada satisfactoriamente al estudiante (" + estudianteEncontrado.getCodigo() + ")");
 
-                JOptionPane.showMessageDialog(RegistroDeudasUI.this, "Deuda registrada satisfactoriamente al estudiante (" + estudianteEncontrado.getCodigo() + ")");
+                } catch (Exception exc) {
+
+                    JOptionPane.showMessageDialog(RegistroDeudasUI.this, "Deuda registrada satisfactoriamente al estudiante (" + estudianteEncontrado.getCodigo() + ")");
+                }
             }
-        }
 
+        }
     }
 
     public class Cancel implements ActionListener {
