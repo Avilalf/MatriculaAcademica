@@ -186,7 +186,7 @@ public class RegistroDeudasUI extends javax.swing.JFrame {
         public void actionPerformed(ActionEvent e) {
 
             if (cbDeuda.getSelectedItem() == null) {
-                JOptionPane.showMessageDialog(RegistroDeudasUI.this, "No es posible registrar la deuda, seleccione el tipo de Deuda.");
+                JOptionPane.showMessageDialog(RegistroDeudasUI.this, "No es posible procesar el registro, seleccione el tipo de Deuda.");
             } else {
 
                 try {
