@@ -37,24 +37,24 @@ public class Universidad {
     }
 
     // Métodos que permiten agregar y remover datos a las listas.
-    public void add(Periodo periodo) {
+    public void addPeriodo(Periodo periodo) {
         this.periodos.add(periodo);
         this.periodoActual = periodo;
     }
 
-    public void remove(Periodo periodo) {
+    public void removePeriodo(Periodo periodo) {
         this.periodos.remove(periodo);
     }
 
-    public void add(Programa programa) {
+    public void addPrograma(Programa programa) {
         this.programas.add(programa);
     }
 
-    public void remove(Programa programa) {
+    public void removePrograma(Programa programa) {
         this.programas.remove(programa);
     }
 
-    public void add(Asignatura nuevaAsignatura) throws Exception {
+    public void addAsignatura(Asignatura nuevaAsignatura) throws Exception {
 
         for (Asignatura registrarAsignatura : asignaturas) {
             if (registrarAsignatura.getCodigo().equals(nuevaAsignatura.getCodigo())) {
@@ -64,19 +64,19 @@ public class Universidad {
         this.asignaturas.add(nuevaAsignatura);
     }
 
-    public void remove(Asignatura asignatura) {
+    public void removeAsignatura(Asignatura asignatura) {
         this.asignaturas.remove(asignatura);
     }
 
-    public void add(Docente docente) {
+    public void addDocente(Docente docente) {
         this.docentes.add(docente);
     }
 
-    public void remove(Docente docente) {
+    public void removeDocente(Docente docente) {
         this.docentes.remove(docente);
     }
 
-    public void add(Estudiante nuevoEstudiante) throws Exception {
+    public void addEstudiante(Estudiante nuevoEstudiante) throws Exception {
         for (Estudiante registrarEstudiante : estudiantes) {
             if (registrarEstudiante.getCodigo() == nuevoEstudiante.getCodigo()) {
                 throw new Exception("El estudiante " + nuevoEstudiante.getCodigo() + " ya se encuentra registrado a la universidad.");
@@ -85,7 +85,7 @@ public class Universidad {
         this.estudiantes.add(nuevoEstudiante);
     }
 
-    public void remove(Estudiante estudiante) {
+    public void removeEstudiante(Estudiante estudiante) {
         this.estudiantes.remove(estudiante);
     }
 

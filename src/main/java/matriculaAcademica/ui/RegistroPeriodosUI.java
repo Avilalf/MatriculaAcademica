@@ -186,7 +186,7 @@ public class RegistroPeriodosUI extends javax.swing.JFrame {
 
             // 3. Agregar el objeto a la universidad
             //or 
-            universidad.add(periodo);
+            universidad.addPeriodo(periodo);
             // 4. Mostrar un mensaje que indique que el periodo fue creado
             //    y agregado a la Universidad
             JOptionPane.showMessageDialog(RegistroPeriodosUI.this, "Información almacenada satisfactoriamente, PERIODO agregado.");
