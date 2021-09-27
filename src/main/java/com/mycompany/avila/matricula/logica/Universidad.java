@@ -79,7 +79,7 @@ public class Universidad {
     public void add(Estudiante nuevoEstudiante) throws Exception {
         for (Estudiante registrarEstudiante : estudiantes) {
             if (registrarEstudiante.getCodigo() == nuevoEstudiante.getCodigo()) {
-                throw new Exception("El estudiante ya se encuentra registrado a la universidad.");
+                throw new Exception("El estudiante " + nuevoEstudiante.getCodigo() + " ya se encuentra registrado a la universidad.");
             }
         }
         this.estudiantes.add(nuevoEstudiante);
