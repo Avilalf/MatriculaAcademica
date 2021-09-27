@@ -9,6 +9,7 @@ import com.mycompany.avila.matricula.logica.Estudiante;
 import com.mycompany.avila.matricula.logica.Periodo;
 import com.mycompany.avila.matricula.logica.Programa;
 import com.mycompany.avila.matricula.logica.Universidad;
+import matriculaAcademica.ui.ConsultaProgramacionAcademicaUI;
 import matriculaAcademica.ui.RegistroDeudasUI;
 import matriculaAcademica.ui.RegistroPeriodosUI;
 
@@ -18,7 +19,7 @@ import matriculaAcademica.ui.RegistroPeriodosUI;
  */
 public class Main {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
 
         Universidad univalle = new Universidad(1411L, "Universidad del Valle", "La Carbonera, Zamorano");
 
@@ -43,6 +44,7 @@ public class Main {
 
         new RegistroPeriodosUI(univalle).setVisible(true);
         new RegistroDeudasUI(univalle).setVisible(true);
+        new ConsultaProgramacionAcademicaUI(univalle).setVisible(true);
 
     }
 
