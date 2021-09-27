@@ -5,17 +5,10 @@
  */
 package Main;
 
-import com.mycompany.avila.matricula.logica.Asignatura;
-import com.mycompany.avila.matricula.logica.Cupo;
-import com.mycompany.avila.matricula.logica.Curso;
-import com.mycompany.avila.matricula.logica.Dia;
-import com.mycompany.avila.matricula.logica.Docente;
 import com.mycompany.avila.matricula.logica.Estudiante;
-import com.mycompany.avila.matricula.logica.Horario;
 import com.mycompany.avila.matricula.logica.Periodo;
 import com.mycompany.avila.matricula.logica.Programa;
 import com.mycompany.avila.matricula.logica.Universidad;
-import java.util.Date;
 import matriculaAcademica.ui.ConsultaProgramacionAcademicaUI;
 import matriculaAcademica.ui.RegistroDeudasUI;
 import matriculaAcademica.ui.RegistroPeriodosUI;
