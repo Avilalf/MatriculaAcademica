@@ -54,7 +54,7 @@ public class Curso {
     }
 
     //Método que permite agregar estudiantes al curso, con el factor de que los cupos del curso se reducen en 1 por cada estudiante
-    public void registrarEstudiante(Estudiante estudiante, Cupo cupo) {
+    public void registrarEstudiante(Estudiante estudiante) {
 
         this.estudiantes.add(estudiante);
 
@@ -65,4 +65,10 @@ public class Curso {
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "Curso :" + "\n    — Grupo: " + grupo + "\n    — Total de Cupos: " + totalCupos + "\n    — Asignatura: " + asignatura + "\n    — Docente: " + docente + "\n    — Cupos: " + cupos + "\n    — Horarios: " + horarios + "\n    — Estudiantes: " + estudiantes + "\n" + "\n_________________________________________________________\n" + "\n";
+    }
+
 }

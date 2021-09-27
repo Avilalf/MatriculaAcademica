@@ -34,4 +34,9 @@ public class Persona {
         return apellido;
     }
 
+    @Override
+    public String toString() {
+        return "\n           - Identificacion: " + identificacion + "\n           - Nombre: " + nombre + "\n           - Apellido: " + apellido;
+    }
+
 }

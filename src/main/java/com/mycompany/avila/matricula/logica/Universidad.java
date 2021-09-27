@@ -103,6 +103,10 @@ public class Universidad {
         return periodoActual;
     }
 
+    public List<Periodo> getPeriodos() {
+        return periodos;
+    }
+
     @Override
     public String toString() {
         return "Universidad{" + "nit=" + nit + ", nombre=" + nombre + ", direccion=" + direccion + ", periodoActual=" + periodoActual + ", periodos=" + periodos + ", programas=" + programas + ", asignaturas=" + asignaturas + ", docentes=" + docentes + ", estudiantes=" + estudiantes + '}';

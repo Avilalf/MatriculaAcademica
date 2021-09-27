@@ -39,6 +39,11 @@ public class Periodo {
         this.cursos.remove(curso);
     }
 
+    
+    public List<Curso> ObtenerCursos() {
+        return cursos;
+    }
+    
     @Override
     public String toString() {
         return "Actual: " + inicia + " - " + finaliza + " (" + añoInicia + " - " + añoFinaliza + ")";

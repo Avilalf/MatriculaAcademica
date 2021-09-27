@@ -51,4 +51,9 @@ public class Estudiante extends Persona {
         return programa;
     }
 
+    @Override
+    public String toString() {
+        return "\n           - Código: " + codigo + "\n           - Programa: " + programa + "\n";
+    }
+
 }

@@ -27,4 +27,9 @@ public class Cupo {
         this.disponibles -= 1;
     }
 
+    @Override
+    public String toString() {
+        return "\n           - Cantidad: " + cantidad + "\n           - Disponible: " + disponibles + "\n           - Programa: " + programa;
+    }
+
 }

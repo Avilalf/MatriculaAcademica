@@ -5,7 +5,12 @@
  */
 package matriculaAcademica.ui;
 
+import com.mycompany.avila.matricula.logica.Periodo;
 import com.mycompany.avila.matricula.logica.Universidad;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ComboBoxModel;
+import javax.swing.event.ListDataListener;
 
 /**
  *
@@ -14,6 +19,7 @@ import com.mycompany.avila.matricula.logica.Universidad;
 public class ConsultaProgramacionAcademicaUI extends javax.swing.JFrame {
 
     private Universidad universidad;
+    private String periodoBuscar;
 
     /**
      * Creates new form ConsultaProgramacionAcademicaUI
@@ -21,6 +27,10 @@ public class ConsultaProgramacionAcademicaUI extends javax.swing.JFrame {
     public ConsultaProgramacionAcademicaUI(Universidad universidad) {
         this.universidad = universidad;
         initComponents();
+        cbPeriodoAcademico.setSelectedItem(null);
+        cbPeriodoAcademico.setModel(new ComboModelPeriodoAcademico());
+        cbPeriodoAcademico.addActionListener(new TextodelArea());
+
     }
 
     /**
@@ -34,9 +44,9 @@ public class ConsultaProgramacionAcademicaUI extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbPeriodoAcademico = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtaInfoGeneral = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Consultar Programación Académica");
@@ -47,12 +57,10 @@ public class ConsultaProgramacionAcademicaUI extends javax.swing.JFrame {
 
         jLabel2.setText("Periodo Académico :");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jtaInfoGeneral.setEditable(false);
+        jtaInfoGeneral.setColumns(20);
+        jtaInfoGeneral.setRows(5);
+        jScrollPane1.setViewportView(jtaInfoGeneral);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,7 +75,7 @@ public class ConsultaProgramacionAcademicaUI extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbPeriodoAcademico, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 17, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -79,9 +87,9 @@ public class ConsultaProgramacionAcademicaUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbPeriodoAcademico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -90,10 +98,61 @@ public class ConsultaProgramacionAcademicaUI extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<Periodo> cbPeriodoAcademico;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jtaInfoGeneral;
     // End of variables declaration//GEN-END:variables
+
+    public class ComboModelPeriodoAcademico implements ComboBoxModel<Periodo> {
+
+        public Periodo periodoSelected;
+
+        @Override
+        public void setSelectedItem(Object anItem) {
+            this.periodoSelected = (Periodo) anItem;
+        }
+
+        @Override
+        public Object getSelectedItem() {
+            return this.periodoSelected;
+        }
+
+        @Override
+        public int getSize() {
+            return universidad.getPeriodos().size();
+        }
+
+        @Override
+        public Periodo getElementAt(int index) {
+            return universidad.getPeriodos().get(index);
+        }
+
+        @Override
+        public void addListDataListener(ListDataListener l) {
+        }
+
+        @Override
+        public void removeListDataListener(ListDataListener l) {
+        }
+
+    }
+
+    public class TextodelArea implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            jtaInfoGeneral.setText("");
+//            jtaInfoGeneral.append(cbPeriodoAcademico.getSelectedItem().toString());
+
+            Periodo periodoSeleccionado = (Periodo) cbPeriodoAcademico.getSelectedItem();
+
+            jtaInfoGeneral.append(periodoSeleccionado.ObtenerCursos().toString());
+
+        }
+
+    }
+
 }

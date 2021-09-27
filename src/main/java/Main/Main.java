@@ -8,8 +8,10 @@ package Main;
 import com.mycompany.avila.matricula.logica.Asignatura;
 import com.mycompany.avila.matricula.logica.Cupo;
 import com.mycompany.avila.matricula.logica.Curso;
+import com.mycompany.avila.matricula.logica.Dia;
 import com.mycompany.avila.matricula.logica.Docente;
 import com.mycompany.avila.matricula.logica.Estudiante;
+import com.mycompany.avila.matricula.logica.Horario;
 import com.mycompany.avila.matricula.logica.Periodo;
 import com.mycompany.avila.matricula.logica.Programa;
 import com.mycompany.avila.matricula.logica.Universidad;
@@ -91,6 +93,12 @@ public class Main {
         univalle.getPeriodoActual().add(curso02_Interactiva);
         univalle.getPeriodoActual().add(curso03_ArquitecturaI);
         univalle.getPeriodoActual().add(curso04_admEmpresas);
+
+        curso01_DiscretasI.add(new Horario(Dia.JUEVES, null, null));
+        curso01_DiscretasI.add(new Horario(Dia.MARTES, null, null));
+
+        curso01_DiscretasI.registrarEstudiante(est01);
+        curso01_DiscretasI.registrarEstudiante(est02);
 
         new RegistroPeriodosUI(univalle).setVisible(true);
         new RegistroDeudasUI(univalle).setVisible(true);

@@ -40,4 +40,9 @@ public class Asignatura {
         return intensidad;
     }
 
+    @Override
+    public String toString() {
+        return "\n           - Código: " + codigo + "\n           - Nombre: " + nombre + "\n           - Creditos: " + creditos + "\n           - Intensidad: " + intensidad;
+    }
+
 }

@@ -24,4 +24,9 @@ public class Horario {
         this.horafin = horafin;
     }
 
+    @Override
+    public String toString() {
+        return "\n" + "\n           - Día: " + dia + "\n           - HoraInicio: " + horaInicio + "\n           - HoraFin: " + horafin;
+    }
+
 }
