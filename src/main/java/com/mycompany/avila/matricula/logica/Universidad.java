@@ -54,8 +54,14 @@ public class Universidad {
         this.programas.remove(programa);
     }
 
-    public void add(Asignatura asignatura) {
-        this.asignaturas.add(asignatura);
+    public void add(Asignatura nuevaAsignatura) throws Exception {
+
+        for (Asignatura registrarAsignatura : asignaturas) {
+            if (registrarAsignatura.getCodigo().equals(nuevaAsignatura.getCodigo())) {
+                throw new Exception("La asignatura ya se encuentra registrada a la universidad.");
+            }
+        }
+        this.asignaturas.add(nuevaAsignatura);
     }
 
     public void remove(Asignatura asignatura) {
@@ -70,8 +76,13 @@ public class Universidad {
         this.docentes.remove(docente);
     }
 
-    public void add(Estudiante estudiante) {
-        this.estudiantes.add(estudiante);
+    public void add(Estudiante nuevoEstudiante) throws Exception {
+        for (Estudiante registrarEstudiante : estudiantes) {
+            if (registrarEstudiante.getCodigo() == nuevoEstudiante.getCodigo()) {
+                throw new Exception("El estudiante ya se encuentra registrado a la universidad.");
+            }
+        }
+        this.estudiantes.add(nuevoEstudiante);
     }
 
     public void remove(Estudiante estudiante) {
