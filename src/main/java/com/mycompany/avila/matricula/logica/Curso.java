@@ -23,7 +23,7 @@ public class Curso {
     private List<Horario> horarios;
     private List<Estudiante> estudiantes;
 
-    public Curso(int grupo, int totalCupos, Asignatura asignatura, Docente docente, List<Cupo> cupos, List<Horario> horarios, List<Estudiante> estudiantes) {
+    public Curso(int grupo, int totalCupos, Asignatura asignatura, Docente docente) {
         this.grupo = grupo;
         this.totalCupos = totalCupos;
         this.asignatura = asignatura;
