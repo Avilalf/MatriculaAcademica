@@ -11,7 +11,7 @@ import com.mycompany.avila.matricula.logica.Universidad;
  *
  * @author avila
  */
-public class GestorMatriculaAcademicaUI extends javax.swing.JFrame {
+public class GestorMatriculaAcademicaUI extends javax.swing.JInternalFrame {
 
     private Universidad universidad;
 

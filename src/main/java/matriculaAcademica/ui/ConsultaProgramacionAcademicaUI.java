@@ -16,7 +16,7 @@ import javax.swing.event.ListDataListener;
  *
  * @author avila
  */
-public class ConsultaProgramacionAcademicaUI extends javax.swing.JFrame {
+public class ConsultaProgramacionAcademicaUI extends javax.swing.JInternalFrame {
 
     private Universidad universidad;
     private String periodoBuscar;

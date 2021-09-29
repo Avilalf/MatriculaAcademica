@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author avila
  */
-public class RegistroDeudasUI extends javax.swing.JFrame {
+public class RegistroDeudasUI extends javax.swing.JInternalFrame {
 
     private Universidad universidad;
     private Estudiante estudianteEncontrado;

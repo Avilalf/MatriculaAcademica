@@ -6,6 +6,8 @@
 package matriculaAcademica.ui;
 
 import com.mycompany.avila.matricula.logica.Universidad;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -21,6 +23,10 @@ public class PrincipalUI extends javax.swing.JFrame {
     public PrincipalUI(Universidad universidad) {
         this.universidad = universidad;
         initComponents();
+        this.mniConsultaProgramacion.addActionListener(new ConsultaProgramacionAcademicaListener());
+        this.mniGestorMatriculaAcademica.addActionListener(new GestorMatriculaAcademicaListener());
+        this.mniRegistroPeriodo.addActionListener(new RegistroPeriodosListener());
+        this.mniRegistroDeudas.addActionListener(new RegistroDeudasListener());
     }
 
     /**
@@ -32,22 +38,118 @@ public class PrincipalUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        desktop = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnuProgramacion = new javax.swing.JMenu();
+        mniConsultaProgramacion = new javax.swing.JMenuItem();
+        mniGestorMatriculaAcademica = new javax.swing.JMenuItem();
+        mnuRegistro = new javax.swing.JMenu();
+        mniRegistroPeriodo = new javax.swing.JMenuItem();
+        mniRegistroDeudas = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
+        desktop.setLayout(desktopLayout);
+        desktopLayout.setHorizontalGroup(
+            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 810, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        desktopLayout.setVerticalGroup(
+            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 434, Short.MAX_VALUE)
         );
+
+        getContentPane().add(desktop, java.awt.BorderLayout.CENTER);
+
+        mnuProgramacion.setText("Programación");
+
+        mniConsultaProgramacion.setText("Consultar programación académica");
+        mnuProgramacion.add(mniConsultaProgramacion);
+
+        mniGestorMatriculaAcademica.setText("Modificar la matricula académica");
+        mnuProgramacion.add(mniGestorMatriculaAcademica);
+
+        jMenuBar1.add(mnuProgramacion);
+
+        mnuRegistro.setText("Registro");
+
+        mniRegistroPeriodo.setText("Registrar periodo académico");
+        mnuRegistro.add(mniRegistroPeriodo);
+
+        mniRegistroDeudas.setText("Registrar deuda a estudiante");
+        mnuRegistro.add(mniRegistroDeudas);
+
+        jMenuBar1.add(mnuRegistro);
+
+        jMenu3.setText("Ayuda");
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane desktop;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem mniConsultaProgramacion;
+    private javax.swing.JMenuItem mniGestorMatriculaAcademica;
+    private javax.swing.JMenuItem mniRegistroDeudas;
+    private javax.swing.JMenuItem mniRegistroPeriodo;
+    private javax.swing.JMenu mnuProgramacion;
+    private javax.swing.JMenu mnuRegistro;
     // End of variables declaration//GEN-END:variables
+
+    public class ConsultaProgramacionAcademicaListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            ConsultaProgramacionAcademicaUI ui = new ConsultaProgramacionAcademicaUI(universidad);
+            desktop.add(ui);
+            ui.setVisible(true);
+        }
+
+    }
+
+    public class GestorMatriculaAcademicaListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            GestorMatriculaAcademicaUI ui = new GestorMatriculaAcademicaUI(universidad);
+            desktop.add(ui);
+            ui.setVisible(true);
+        }
+
+    }
+
+    public class RegistroPeriodosListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            RegistroPeriodosUI ui = new RegistroPeriodosUI(universidad);
+            desktop.add(ui);
+            ui.setVisible(true);
+
+        }
+
+    }
+
+    public class RegistroDeudasListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            RegistroDeudasUI ui = new RegistroDeudasUI(universidad);
+            desktop.add(ui);
+            ui.setVisible(true);
+        }
+
+    }
+
 }

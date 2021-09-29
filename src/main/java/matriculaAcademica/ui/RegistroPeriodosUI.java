@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  *
  * @author Cristian D. Avila N.
  */
-public class RegistroPeriodosUI extends javax.swing.JFrame {
+public class RegistroPeriodosUI extends javax.swing.JInternalFrame {
 
     private Universidad universidad;
 
