@@ -15,13 +15,15 @@ import java.util.List;
 public class Estudiante extends Persona {
 
     private int codigo;
+    private String contraseñaIngreso;
     private Programa programa;
     private List<Tabulado> tabulados;
     private List<Deuda> deudas;
 
-    public Estudiante(int codigo, Programa programa, long identificacion, String nombre, String apellido) {
+    public Estudiante(int codigo, String contraseñaIngreso, Programa programa, long identificacion, String nombre, String apellido) {
         super(identificacion, nombre, apellido);
         this.codigo = codigo;
+        this.contraseñaIngreso = contraseñaIngreso;
         this.programa = programa;
         this.tabulados = new LinkedList<>();
         this.deudas = new LinkedList<>();

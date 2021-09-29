@@ -49,11 +49,12 @@ public class Main {
         Cupo cupo02 = new Cupo(10, 10, ingIndustrial);
         Cupo cupo03 = new Cupo(10, 10, tecAlimentos);
 
-        Estudiante est01 = new Estudiante(201957500, tecSistemas, 1006326833, "Cristian", "Avila");
-        Estudiante est02 = new Estudiante(201957800, tecSistemas, 1007327877, "Carolina", "García");
-        Estudiante est03 = new Estudiante(201957900, tecSistemas, 1010586977, "Junior", "Ortiz");
-        Estudiante est04 = new Estudiante(201723456, ingIndustrial, 1113265823, "Nicolás", "Salas");
-        Estudiante est05 = new Estudiante(201823415, ingIndustrial, 1113547152, "Santiago", "Quintero");
+        Estudiante est01 = new Estudiante(201957500, "123456cristian", tecSistemas, 1006326833, "Cristian", "Avila");
+        Estudiante est02 = new Estudiante(201156345, "123456zamir", tecSistemas, 1113521840, "Zamir", "Narvaez");
+        Estudiante est03 = new Estudiante(201957800, "123456carolina", tecSistemas, 1007327877, "Carolina", "García");
+        Estudiante est04 = new Estudiante(201957900, "123456junior@", tecSistemas, 1010586977, "Junior", "Ortiz");
+        Estudiante est05 = new Estudiante(201723456, "123456nicolas*123", ingIndustrial, 1113265823, "Nicolás", "Salas");
+        Estudiante est06 = new Estudiante(201823415, "santiago123", ingIndustrial, 1113547152, "Santiago", "Quintero");
 
         Curso curso01_DiscretasI = new Curso(50, 10, mateDiscretasI, doc03);
         Curso curso02_Interactiva = new Curso(50, 10, progInteractiva, doc01);
