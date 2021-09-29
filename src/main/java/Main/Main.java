@@ -16,6 +16,7 @@ import com.mycompany.avila.matricula.logica.Periodo;
 import com.mycompany.avila.matricula.logica.Programa;
 import com.mycompany.avila.matricula.logica.Universidad;
 import matriculaAcademica.ui.ConsultaProgramacionAcademicaUI;
+import matriculaAcademica.ui.GestorMatriculaAcademicaUI;
 import matriculaAcademica.ui.RegistroDeudasUI;
 import matriculaAcademica.ui.RegistroPeriodosUI;
 
@@ -104,6 +105,7 @@ public class Main {
         new RegistroPeriodosUI(univalle).setVisible(true);
         new RegistroDeudasUI(univalle).setVisible(true);
         new ConsultaProgramacionAcademicaUI(univalle).setVisible(true);
+        new GestorMatriculaAcademicaUI(univalle).setVisible(true);
 
     }
 
