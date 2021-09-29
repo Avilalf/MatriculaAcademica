@@ -49,7 +49,10 @@ public class RegistroPeriodosUI extends javax.swing.JInternalFrame {
         jButtonGuardar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
         setTitle("Creacion de Periodos Academicos");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
